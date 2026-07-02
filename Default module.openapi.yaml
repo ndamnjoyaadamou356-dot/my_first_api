@@ -1,0 +1,169 @@
+openapi: 3.0.1
+info:
+  title: Default module
+  description: ''
+  version: 1.0.0
+tags: []
+paths:
+  /livre:
+    post:
+      summary: cree livre
+      deprecated: false
+      description: ''
+      tags: []
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titre:
+                  type: string
+                auteur:
+                  type: string
+                annee_puplication:
+                  type: string
+                maison_editionId:
+                  type: string
+              required:
+                - titre
+                - auteur
+                - annee_puplication
+                - maison_editionId
+            example:
+              titre: api
+              auteur: ugo
+              annee_puplication: '2025'
+              maison_editionId: codelivre
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+      security: []
+    get:
+      summary: lire livre
+      deprecated: false
+      description: ''
+      tags: []
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  auteur:
+                    type: string
+                  titre:
+                    type: string
+                  annee_publication:
+                    type: string
+                  maison_edition:
+                    type: string
+                required:
+                  - auteur
+                  - titre
+                  - annee_publication
+                  - maison_edition
+                example:
+                  - auteur: ugo
+                    titre: api
+                    annee_publication: '2025'
+                    maison_edition: codelivre
+                  - auteur: amza
+                    titre: python
+                    annee_publication: '2025'
+                    maison_edition: codepython
+          headers: {}
+      security: []
+  /auteur:
+    get:
+      summary: lire auteur
+      deprecated: false
+      description: ''
+      tags: []
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nom:
+                  type: string
+                age:
+                  type: integer
+                pay:
+                  type: string
+              required:
+                - nom
+                - age
+                - pay
+            examples: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      security: []
+    post:
+      summary: cree auteur
+      deprecated: false
+      description: ''
+      tags: []
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nom:
+                  type: string
+                age:
+                  type: integer
+                pay:
+                  type: string
+              required:
+                - nom
+                - age
+                - pay
+            examples: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      security: []
+components:
+  schemas: {}
+  responses: {}
+  securitySchemes: {}
+servers: []
+security: []
